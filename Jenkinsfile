@@ -24,7 +24,7 @@ pipeline {
         stage('Terraform Plan') {
             steps {
                 dir('terraform') {
-                    sh 'terraform plan'
+                    sh 'terraform plan -var="key_name=my-ec2-key"'
                 }
             }
         }
@@ -32,7 +32,7 @@ pipeline {
         stage('Terraform Apply') {
             steps {
                 dir('terraform') {
-                    sh 'terraform apply -auto-approve'
+                    sh 'terraform apply -auto-approve -var="key_name=my-ec2-key"'
                 }
             }
         }

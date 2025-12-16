@@ -1,7 +1,4 @@
 variable "instance_type" {
-  default = "t2.micro"
-}
-
-variable "key_name" {
-  description = "EC2 key pair name"
+  description = "EC2 instance type"
+  default     = "t3.micro"
 }
